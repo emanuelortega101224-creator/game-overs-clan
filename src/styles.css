@@ -1,0 +1,115 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-neon-orange: var(--neon-orange);
+  --color-neon-purple: var(--neon-purple);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --font-display: "Orbitron", "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "Rajdhani", "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.875rem;
+
+  --background: oklch(0.13 0 0);
+  --foreground: oklch(0.99 0 0);
+  --surface: oklch(0.17 0 0);
+  --surface-2: oklch(0.21 0.01 25);
+  --card: oklch(0.17 0 0);
+  --card-foreground: oklch(0.99 0 0);
+  --popover: oklch(0.17 0 0);
+  --popover-foreground: oklch(0.99 0 0);
+
+  /* Free Fire red — used as the only accent */
+  --neon-orange: oklch(0.58 0.23 27);
+  --neon-purple: oklch(0.99 0 0);
+
+  --primary: oklch(0.58 0.23 27);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.99 0 0);
+  --secondary-foreground: oklch(0.13 0 0);
+
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.58 0.23 27);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.58 0.23 27);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.3 0 0 / 0.8);
+  --input: oklch(0.2 0 0);
+  --ring: oklch(0.58 0.23 27);
+}
+
+.dark { color-scheme: dark; }
+
+@layer base {
+  html, body { background: var(--color-background); color: var(--color-foreground); }
+  body {
+    font-family: var(--font-sans);
+    background:
+      radial-gradient(900px 500px at 10% -10%, color-mix(in oklch, var(--neon-orange) 28%, transparent), transparent 60%),
+      radial-gradient(700px 400px at 110% 10%, color-mix(in oklch, var(--neon-orange) 18%, transparent), transparent 60%),
+      var(--color-background);
+    min-height: 100dvh;
+    /* App-like feel: no text selection / copy / long-press menu */
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Allow selection only where users actively edit text */
+  input, textarea, [contenteditable="true"] {
+    -webkit-user-select: text;
+    user-select: text;
+    -webkit-touch-callout: default;
+  }
+  /* Images: prevent drag/save menu on long press */
+  img { -webkit-user-drag: none; user-drag: none; -webkit-touch-callout: none; }
+  * { border-color: var(--color-border); }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0.02em; }
+}
+
+
+@utility neon-glow-orange { box-shadow: 0 0 0 1px color-mix(in oklch, var(--neon-orange) 60%, transparent), 0 0 24px -4px color-mix(in oklch, var(--neon-orange) 70%, transparent); }
+@utility neon-glow-purple { box-shadow: 0 0 0 1px oklch(0.99 0 0 / 0.5), 0 0 18px -4px oklch(0.99 0 0 / 0.45); }
+@utility text-glow-orange { text-shadow: 0 0 12px color-mix(in oklch, var(--neon-orange) 80%, transparent); }
+@utility text-glow-purple { text-shadow: 0 0 10px oklch(0.99 0 0 / 0.55); }
+@utility gradient-neon { background-image: linear-gradient(135deg, oklch(0.62 0.24 27), oklch(0.42 0.2 27)); }
+@utility surface-card {
+  background: linear-gradient(180deg, color-mix(in oklch, var(--surface-2) 70%, transparent), color-mix(in oklch, var(--surface) 80%, transparent));
+  border: 1px solid color-mix(in oklch, var(--neon-orange) 30%, transparent);
+  backdrop-filter: blur(10px);
+}
+@utility clip-blade {
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Clan Free Fire",
+  "short_name": "Clan FF",
+  "description": "App del clan: eventos, grupos y chat.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0c0a18",
+  "theme_color": "#0c0a18",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}

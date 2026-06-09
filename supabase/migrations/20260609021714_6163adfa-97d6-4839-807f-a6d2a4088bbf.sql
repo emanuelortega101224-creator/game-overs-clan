@@ -1,0 +1,21 @@
+ALTER TABLE public.messages REPLICA IDENTITY FULL;
+ALTER TABLE public.groups REPLICA IDENTITY FULL;
+ALTER TABLE public.group_members REPLICA IDENTITY FULL;
+ALTER TABLE public.events REPLICA IDENTITY FULL;
+ALTER TABLE public.raffle_registrations REPLICA IDENTITY FULL;
+ALTER TABLE public.event_mvps REPLICA IDENTITY FULL;
+ALTER TABLE public.site_texts REPLICA IDENTITY FULL;
+ALTER TABLE public.clan_settings REPLICA IDENTITY FULL;
+ALTER TABLE public.stickers REPLICA IDENTITY FULL;
+ALTER TABLE public.profiles REPLICA IDENTITY FULL;
+
+ALTER PUBLICATION supabase_realtime ADD TABLE public.messages;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.groups;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.group_members;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.events;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.raffle_registrations;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.event_mvps;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.site_texts;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.clan_settings;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.stickers;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.profiles;

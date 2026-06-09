@@ -1,0 +1,10 @@
+ALTER PUBLICATION supabase_realtime ADD TABLE public.clan_settings;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.site_texts;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.events;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.groups;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.role_permissions;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.user_roles;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.event_mvps;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.profiles;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.raffle_registrations;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.stickers;

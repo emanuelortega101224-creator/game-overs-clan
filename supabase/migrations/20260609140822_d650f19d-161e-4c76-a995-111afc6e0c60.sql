@@ -1,0 +1,1 @@
+GRANT SELECT ON public.site_texts TO anon;
