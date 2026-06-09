@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Build for Vercel (Nitro vercel preset → .vercel/output).
+  // Lovable's own hosting keeps working because it overrides the preset at build time.
+  nitro: {
+    preset: "vercel",
+  },
 });
